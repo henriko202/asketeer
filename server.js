@@ -1,13 +1,14 @@
-require('dotenv').config();
-const express = require('express');
-const router = require('./routes/router.js');
+require("dotenv").config()
+const express = require("express")
+const router = require("./routes/router")
 
-const app = express();
-app.use(express.json());
+const app = express()
+app.use(express.json())
 
-const port = process.env.PORT;
+const port = process.env.PORT || 8080
 
-app.use('/', router);
-app.listen(port || 8080, () => {
-    console.log(`Listening on port ${port}`);
-});
+app.use("/", router)
+
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`)
+})
