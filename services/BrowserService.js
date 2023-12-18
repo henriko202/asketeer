@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer")
+require("dotenv").config()
 
 class BrowserService {
   /**
@@ -15,7 +16,13 @@ class BrowserService {
       console.log("Dumping IO from browser")
     }
 
-    return puppeteer.launch({ dumpio, headless })
+    return puppeteer.launch({
+      dumpio,
+      headless,
+      executablePath:
+        process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath(),
+      args: ["--no-sandbox", "--disable-setuid-sandbox", "single-process", "--no-zygote"],
+    })
   }
 
   /**
