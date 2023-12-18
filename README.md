@@ -1,10 +1,12 @@
 # Instructions
 
-The API is located on the url: URL_PLACEHOLDER
+The API is located on the url: https://asketeer.onrender.com
 
-The OpenAPI specification is located on the url: URL_PLACEHOLDER/docs
+The OpenAPI specification is located on the url: https://asketeer.onrender.com/docs
 
-Or you can access it on `localhost:8080/docs`.
+Heads up: The API is hosted on a free tier on Render, so it might take a few seconds to start up if it's not being used for a while.
+
+Or you can access it on `localhost:8080/docs` if you run the application locally.
 
 # Explanation
 
