@@ -1,3 +1,33 @@
+# Instructions
+
+The API is located on the url: URL_PLACEHOLDER
+
+The OpenAPI specification is located on the url: URL_PLACEHOLDER/docs
+
+Or you can access it on `localhost:8080/docs`.
+
+# Explanation
+
+Since this is probably a mockup of a Serverless API, the only new libraries that I've added are:
+
+- `Swagger-UI-Express`: To serve the OpenAPI specification on the `/docs` endpoint
+- `prettier`: To format the code
+- `eslint`: To enforce code style
+  - and it's respective plugins to work with prettier
+
+I've kept the same structure of the boilerplate, but I've added a `utils` folder to write some of the logic that I've used on the `search` endpoint.
+
+To document the code, I've used JSDoc comments, and you can see the documentation on the Swagger UI.
+
+# How to run
+
+It's a simple NodeJS application, so you can run it with the following commands:
+
+```bash
+npm install
+npm run start
+```
+
 # Test Dev Asksuite
 
 Hey! Glad you're here.

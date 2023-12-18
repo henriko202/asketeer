@@ -1,0 +1,77 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Asksuite Search API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/search": {
+      "post": {
+        "summary": "Search for available rooms",
+        "description": "This endpoint allows you to search for available rooms based on check-in and check-out dates.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "checkin": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Check-in date"
+                  },
+                  "checkout": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Check-out date"
+                  }
+                },
+                "required": ["checkin", "checkout"]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "Room name"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "Room description"
+                      },
+                      "price": {
+                        "type": "string",
+                        "description": "Room daily price"
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "Room main photo"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "No rooms available for the given dates"
+          }
+        }
+      }
+    }
+  }
+}
