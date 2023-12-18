@@ -46,7 +46,7 @@ router.post("/search", async (req, res) => {
     url,
     dumpio: true,
     debug: true,
-    waitForFullLoad: true,
+    waitForLoad: true,
     selectorForLoad: "div.q-carousel__slide",
     requestInterception: process.env.SHOULD_INTERCEPT_REQUESTS === "true",
     requestInterceptionURL: "consulta-disponibilidade",
